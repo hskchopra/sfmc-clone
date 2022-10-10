@@ -180,6 +180,7 @@ define(["postmonger"], function (Postmonger) {
     }
   
     function save() {
+      console.log('In save function.')
       var name = $("#select1").find("option:selected").html();
       var value = getMessage();
   
