@@ -15,9 +15,20 @@
     },
     "arguments": {
         "execute": {
-           "inArguments":[],
-          "outArguments": [],
-          "url": "https://thesfmcactivity.herokuapp.com/journeybuilder/execute",
+           "inArguments":[
+            {
+              "emailAddress": "{{InteractionDefaults.Email}}"
+            },
+            {
+              "phoneNumber": "{{Contact.Default.PhoneNumber}}"
+            }
+          ],
+          "outArguments": [
+            {
+              "foundSignupDate": ""
+            }
+          ],
+          "url": "https://thesfmcactivity.herokuapp.com/execute",
            "verb": "POST",
             "body": "",
             "header": "",
@@ -28,22 +39,22 @@
     },
     "configurationArguments": {
       "save": {
-        "url": "https://thesfmcactivity.herokuapp.com/journeybuilder/save",
+        "url": "https://thesfmcactivity.herokuapp.com/save",
           "verb": "POST",
         "useJwt": true
        },
        "publish": {
-        "url": "https://thesfmcactivity.herokuapp.com/journeybuilder/publish",
+        "url": "https://thesfmcactivity.herokuapp.com/publish",
            "verb": "POST",
         "useJwt": true
        },
       "stop": {
-        "url": "https://thesfmcactivity.herokuapp.com/journeybuilder/stop",
+        "url": "https://thesfmcactivity.herokuapp.com/stop",
            "verb": "POST",
         "useJwt": true
       },
       "validate": {
-        "url": "https://thesfmcactivity.herokuapp.com/journeybuilder/validate",
+        "url": "https://thesfmcactivity.herokuapp.com/validate",
         "verb": "POST",
         "useJwt": true
       }
