@@ -60,20 +60,46 @@
       }
     },
     "wizardSteps": [
-        { "label": "Configure Activity", "key": "step1" }
+        { "label": "Configure Activity", "key": "step1" },
+        { "label": "Step 2", "key": "step2" },
+        { "label": "Step 3", "key": "step3" },
+        { "label": "Step 4", "key": "step4", "active": false }
     ],
     "userInterfaces": {
         "configModal": {
-            "height": 400,
-            "width": 1000,
-          "fullscreen": false
+            "height": 200,
+            "width": 300,
+          "fullscreen": true
         }
     },
     "schema": {
         "arguments": {
             "execute": {
-                "inArguments": [],
-                "outArguments": []
+                "inArguments": [
+                  {
+                    "phoneNumber": {
+                      "dataType": "Phone",
+                      "isNullable": false,
+                      "direction": "in"
+                    }
+                  },
+                  {
+                    "emailAddress": {
+                      "dataType": "Email",
+                      "isNullable": false,
+                      "direction": "in"
+                    }
+                  }
+                ],
+                "outArguments": [
+                  {
+                    "foundSignupDate": {
+                      "dataType": "Date",
+                      "direction": "out",
+                      "access": "visible"
+                    }
+                  }
+                ]
             }
         }
     }
