@@ -15,20 +15,9 @@
     },
     "arguments": {
         "execute": {
-           "inArguments":[
-            {
-              "emailAddress": "{{InteractionDefaults.Email}}"
-            },
-            {
-              "phoneNumber": "{{Contact.Default.PhoneNumber}}"
-            }
-          ],
-          "outArguments": [
-            {
-              "foundSignupDate": ""
-            }
-          ],
-          "url": "https://thesfmcactivity.herokuapp.com/execute",
+           "inArguments":[],
+          "outArguments": [],
+          "url": "https://<your-domain-here>/journeybuilder/execute",
            "verb": "POST",
             "body": "",
             "header": "",
@@ -39,67 +28,41 @@
     },
     "configurationArguments": {
       "save": {
-        "url": "https://thesfmcactivity.herokuapp.com/save",
+        "url": "https://<your-domain-here>/journeybuilder/save",
           "verb": "POST",
         "useJwt": true
        },
        "publish": {
-        "url": "https://thesfmcactivity.herokuapp.com/publish",
+        "url": "https://<your-domain-here>/journeybuilder/publish",
            "verb": "POST",
         "useJwt": true
        },
       "stop": {
-        "url": "https://thesfmcactivity.herokuapp.com/stop",
+        "url": "https://<your-domain-here>/journeybuilder/stop",
            "verb": "POST",
         "useJwt": true
       },
       "validate": {
-        "url": "https://thesfmcactivity.herokuapp.com/validate",
+        "url": "https://<your-domain-here>/journeybuilder/validate",
         "verb": "POST",
         "useJwt": true
       }
     },
     "wizardSteps": [
-        { "label": "Configure Activity", "key": "step1" },
-        { "label": "Step 2", "key": "step2" },
-        { "label": "Step 3", "key": "step3" },
-        { "label": "Step 4", "key": "step4", "active": false }
+        { "label": "Configure Activity", "key": "step1" }
     ],
     "userInterfaces": {
         "configModal": {
-            "height": 200,
-            "width": 300,
-          "fullscreen": true
+            "height": 400,
+            "width": 1000,
+          "fullscreen": false
         }
     },
     "schema": {
         "arguments": {
             "execute": {
-                "inArguments": [
-                  {
-                    "phoneNumber": {
-                      "dataType": "Phone",
-                      "isNullable": false,
-                      "direction": "in"
-                    }
-                  },
-                  {
-                    "emailAddress": {
-                      "dataType": "Email",
-                      "isNullable": false,
-                      "direction": "in"
-                    }
-                  }
-                ],
-                "outArguments": [
-                  {
-                    "foundSignupDate": {
-                      "dataType": "Date",
-                      "direction": "out",
-                      "access": "visible"
-                    }
-                  }
-                ]
+                "inArguments": [],
+                "outArguments": []
             }
         }
     }
