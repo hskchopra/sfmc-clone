@@ -89,6 +89,7 @@ define([
 
     function save() {
         let config = JSON.parse( document.getElementById('configuration').value);
+        config['metaData'].isConfigured = true;
         connection.trigger('updateActivity', config);
         // var postcardURLValue = $('#postcard-url').val();
         // var postcardTextValue = $('#postcard-text').val();
