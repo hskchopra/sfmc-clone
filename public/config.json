@@ -16,12 +16,18 @@
     "arguments": {
         "execute": {
           "inArguments": [{
-            "myNameArgument": "{{Contact.Attribute.SFDCDE.Name}}",
-            "myEmailArgument": "{{Contact.Attribute.SFDCDE.Email}}",
-            "myIdArgument": "{{Contact.Attribute.SFDCDE.Id}}",
+            "myNameArgument": "{{Contact.Attribute.SFDCDE.Name}}"            
+          },{
+            "myEmailArgument": "{{Contact.Attribute.SFDCDE.Email}}"
+          },{
+            "myIdArgument": "{{Contact.Attribute.SFDCDE.Id}}"
+          },{
             "myconstantArgument": "Constant"
           }],
-          "outArguments": [],
+          "outArguments": [{
+            "myNameArgument": "{{Contact.Attribute.SFDCDE.Name}}"
+          }
+          ],
           "url":"https://thesfmcactivity.herokuapp.com/journeybuilder/execute",
            "verb": "POST",
             "body": "",
@@ -66,29 +72,37 @@
     "schema": {
         "arguments": {
             "execute": {
-              "inArguments": [{
+              "inArguments": [
+                {
                 "myNameArgument": {
                   "dataType": "Text",
                   "isNullable": false,
                   "direction": "in"
-                },
+                }},{
                 "myEmailArgument": {
                   "dataType": "Text",
                   "isNullable": false,
                   "direction": "in"
-                },
-                "myIdArgument": {
+                }},
+                {"myIdArgument": {
                   "dataType": "Number",
                   "isNullable": false,
                   "direction": "in"
-                },
-                "myconstantArgument": {
+                }},
+                {"myconstantArgument": {
                   "dataType": "Text",
                   "isNullable": false,
                   "direction": "in"
-                }
-              }],
-              "outArguments": []
+                }}
+              ],
+              "outArguments": [
+                {
+                  "myNameArgument": {
+                    "dataType": "Text",
+                    "isNullable": false,
+                    "direction": "in"
+                  }}
+              ]
             }
         }
     }
