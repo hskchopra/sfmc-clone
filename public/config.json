@@ -16,7 +16,10 @@
     "arguments": {
         "execute": {
           "inArguments": [{
-            "myInArgument": "{{Contact.Attribute.SFDCDE.Name}}"
+            "myNameArgument": "{{Contact.Attribute.SFDCDE.Name}}",
+            "myEmailArgument": "{{Contact.Attribute.SFDCDE.Email}}",
+            "myIdArgument": "{{Contact.Attribute.SFDCDE.Id}}",
+            "myconstantArgument": "Constant"
           }],
           "outArguments": [],
           "url":"https://thesfmcactivity.herokuapp.com/journeybuilder/execute",
@@ -64,7 +67,22 @@
         "arguments": {
             "execute": {
               "inArguments": [{
-                "myInArgument": {
+                "myNameArgument": {
+                  "dataType": "Text",
+                  "isNullable": false,
+                  "direction": "in"
+                },
+                "myEmailArgument": {
+                  "dataType": "Text",
+                  "isNullable": false,
+                  "direction": "in"
+                },
+                "myIdArgument": {
+                  "dataType": "Number",
+                  "isNullable": false,
+                  "direction": "in"
+                },
+                "myconstantArgument": {
                   "dataType": "Text",
                   "isNullable": false,
                   "direction": "in"
