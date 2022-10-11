@@ -48,33 +48,34 @@ define([
 
     function initialize(data) {
         console.log(data);
-        if (data) {
-            payload = data;
-        }
+        document.getElementById('configuration').value = JSON.stringify(data,null,2);
+        // if (data) {
+        //     payload = data;
+        // }
         
-        var hasInArguments = Boolean(
-            payload['arguments'] &&
-            payload['arguments'].execute &&
-            payload['arguments'].execute.inArguments &&
-            payload['arguments'].execute.inArguments.length > 0
-        );
+        // var hasInArguments = Boolean(
+        //     payload['arguments'] &&
+        //     payload['arguments'].execute &&
+        //     payload['arguments'].execute.inArguments &&
+        //     payload['arguments'].execute.inArguments.length > 0
+        // );
 
-        var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
+        // var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
 
-        console.log(inArguments);
+        // console.log(inArguments);
 
-        $.each(inArguments, function (index, inArgument) {
-            $.each(inArgument, function (key, val) {
+        // $.each(inArguments, function (index, inArgument) {
+        //     $.each(inArgument, function (key, val) {
                 
               
-            });
-        });
+        //     });
+        // });
 
-        connection.trigger('updateButton', {
-            button: 'next',
-            text: 'done',
-            visible: true
-        });
+        // connection.trigger('updateButton', {
+        //     button: 'next',
+        //     text: 'done',
+        //     visible: true
+        // });
     }
 
     function onGetTokens(tokens) {
@@ -87,17 +88,19 @@ define([
     }
 
     function save() {
-        var postcardURLValue = $('#postcard-url').val();
-        var postcardTextValue = $('#postcard-text').val();
+        let config = JSON.parse( document.getElementById('configuration').value);
+        connection.trigger('updateActivity', config);
+        // var postcardURLValue = $('#postcard-url').val();
+        // var postcardTextValue = $('#postcard-text').val();
 
-        payload['arguments'].execute.inArguments = [{
-            "tokens": authTokens
-        }];
+        // payload['arguments'].execute.inArguments = [{
+        //     "tokens": authTokens
+        // }];
         
-        payload['metaData'].isConfigured = true;
+        // payload['metaData'].isConfigured = true;
 
-        console.log(payload);
-        connection.trigger('updateActivity', payload);
+        // console.log(payload);
+        // connection.trigger('updateActivity', payload);
     }
 
 
