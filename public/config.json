@@ -17,10 +17,7 @@
         "execute": {
           "inArguments":[
             {
-                "contactKey": "{{Contact.Key}}"
-            },
-            {
-                "email": "{{Contact.Attribute.JourneyEntrySource.Phone}}"
+                "contactKey": "My arguments from iframe"
             }
         ],
           "outArguments": [],
@@ -70,13 +67,6 @@
             "execute": {
                 "inArguments": [{
                   "contactKey": {
-                    "dataType": "Text",
-                    "isNullable": true,
-                    "direction": "in"
-                  }
-                },
-                {
-                  "email": {
                     "dataType": "Text",
                     "isNullable": true,
                     "direction": "in"
