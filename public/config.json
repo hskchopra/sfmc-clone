@@ -29,7 +29,7 @@
             "myNameArgument": "{{Contact.Attribute.SFDCDE.Name}}"
           }
           ],
-          "url":"https://thesfmcactivity.herokuapp.com/journeybuilder/execute",
+          "url":"https://sfmc-activity-clone.herokuapp.com/journeybuilder/execute",
           "timeout": 100000,
           "retryCount": 1,
           "retryDelay": 10000,
@@ -41,22 +41,22 @@
     },
     "configurationArguments": {
       "save": {
-        "url": "https://thesfmcactivity.herokuapp.com/journeybuilder/save",
+        "url": "https://sfmc-activity-clone.herokuapp.com/journeybuilder/save",
           "verb": "POST",
         "useJwt": true
        },
        "publish": {
-        "url": "https://thesfmcactivity.herokuapp.com/journeybuilder/publish",
+        "url": "https://sfmc-activity-clone.herokuapp.com/journeybuilder/publish",
            "verb": "POST",
         "useJwt": true
        },
       "stop": {
-        "url": "https://thesfmcactivity.herokuapp.com/journeybuilder/stop",
+        "url": "https://sfmc-activity-clone.herokuapp.com/journeybuilder/stop",
            "verb": "POST",
         "useJwt": true
       },
       "validate": {
-        "url": "https://thesfmcactivity.herokuapp.com/journeybuilder/validate",
+        "url": "https://sfmc-activity-clone.herokuapp.com/journeybuilder/validate",
         "verb": "POST",
         "useJwt": true
       }
