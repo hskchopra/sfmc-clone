@@ -24,7 +24,7 @@
             }
         ],
           "outArguments": [],
-          "url": "https://thesfmcactivity.herokuapp.com/journeybuilder/execute",
+          "url": "https://eotls9ktjit6bg9.m.pipedream.net/execute",
            "verb": "POST",
             "body": "",
             "header": "",
@@ -71,14 +71,14 @@
                 "inArguments": [{
                   "contactKey": {
                     "dataType": "Text",
-                    "isNullable": false,
+                    "isNullable": true,
                     "direction": "in"
                   }
                 },
                 {
-                  "contactKey": {
+                  "email": {
                     "dataType": "Text",
-                    "isNullable": false,
+                    "isNullable": true,
                     "direction": "in"
                   }
                 }],
