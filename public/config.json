@@ -16,10 +16,10 @@
     "arguments": {
         "execute": {
           "inArguments": [{
-            "myInArgument": "inArgument coming from iframe"
+            "myInArgument": "{{Contact.Attribute.SFDCDE.Name}}"
           }],
           "outArguments": [],
-          "url":"https://eotls9ktjit6bg9.m.pipedream.net/execute",
+          "url":"https://thesfmcactivity.herokuapp.com/journeybuilder/execute",
            "verb": "POST",
             "body": "",
             "header": "",
