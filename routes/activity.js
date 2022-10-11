@@ -86,9 +86,15 @@ exports.execute = function (req, res) {
             
             // decoded in arguments
             var decodedArgs = decoded.inArguments[0];
-            // require('jsonwebtoken').verify(req.body.toString('utf8'), secret, {
-            //     algorithm: 'HS256'
-            // }, cb);
+            require('jsonwebtoken').verify(req.body.toString('utf8'), process.env.jwtSecret, {
+                algorithm: 'HS256'
+            }, (error, myDecoded)=>{
+                if (error) {
+                    console.error(error);
+                    return res.status(401).end();
+                }
+                console.log("Incallback",myDecoded,JSON.stringify(myDecoded));
+            });
             
             console.log('decodedArgs-'+decoded.inArguments);
             console.log("body: " + req.body);
