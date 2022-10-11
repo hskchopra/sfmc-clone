@@ -15,7 +15,14 @@
     },
     "arguments": {
         "execute": {
-           "inArguments":[],
+          "inArguments":[
+            {
+                "contactKey": "{{Contact.Key}}"
+            },
+            {
+                "email": "{{Contact.Attribute.JourneyEntrySource.Phone}}"
+            }
+        ],
           "outArguments": [],
           "url": "https://thesfmcactivity.herokuapp.com/journeybuilder/execute",
            "verb": "POST",
