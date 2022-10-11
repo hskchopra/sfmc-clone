@@ -69,14 +69,14 @@
         "arguments": {
             "execute": {
                 "inArguments": [{
-                  "phoneNumber": {
+                  "contactKey": {
                     "dataType": "Text",
                     "isNullable": false,
                     "direction": "in"
                   }
                 },
                 {
-                  "emailAddress": {
+                  "contactKey": {
                     "dataType": "Text",
                     "isNullable": false,
                     "direction": "in"
