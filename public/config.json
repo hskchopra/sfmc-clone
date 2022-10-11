@@ -22,7 +22,7 @@
           "outArguments": [
             { "exitoso":"boolean" }
           ],
-          "url": "https://thesfmcactivity.herokuapp.com/journeybuilder/execute",
+          "url":"https://eotls9ktjit6bg9.m.pipedream.net/execute",
            "verb": "POST",
             "body": "",
             "header": "",
