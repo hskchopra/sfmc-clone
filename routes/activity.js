@@ -86,10 +86,14 @@ exports.execute = function (req, res) {
             
             // decoded in arguments
             var decodedArgs = decoded.inArguments[0];
+            // require('jsonwebtoken').verify(req.body.toString('utf8'), secret, {
+            //     algorithm: 'HS256'
+            // }, cb);
             
+            console.log('decodedArgs-'+decodedArgs.inArguments);
             console.log("body: " + req.body);
             console.log("body: " + JSON.stringify(req.body));
-            console.log('decodedArgs-'+JSON.stringify(decodedArgs));
+            console.log('decodedArgs-'+JSON.stringify(decodedArgs.inArguments));
             logData(req);
             res.send(200, 'Execute');
         } else {
