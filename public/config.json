@@ -16,8 +16,8 @@
     "arguments": {
         "execute": {
           "inArguments":[
-            { "idUser": "{{Contact.Attribute.Id}}"},
-            { "idCampana": "{{Contact.Attribute.Name}}"}
+            { "idUser": "Hello From config json"},
+            { "idCampana": "Hello from node js"}
           ],
           "outArguments": [
             { "exitoso":"boolean" }
