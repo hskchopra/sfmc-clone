@@ -29,9 +29,7 @@ function logData(req) {
         secure: req.secure,
         originalUrl: req.originalUrl
     });
-    console.log("body: " + req.body);
-    console.log("body: " + JSON.stringify(req.body));
-    console.log("body: " + util.inspect(req.body).toString('UTF8'));
+    console.log("body: " + util.inspect(req.body));
     console.log("headers: " + req.headers);
     console.log("trailers: " + req.trailers);
     console.log("method: " + req.method);
@@ -88,6 +86,9 @@ exports.execute = function (req, res) {
             
             // decoded in arguments
             var decodedArgs = decoded.inArguments[0];
+            
+            console.log("body: " + req.body);
+            console.log("body: " + JSON.stringify(req.body));
             console.log('decodedArgs-'+JSON.stringify(decodedArgs));
             logData(req);
             res.send(200, 'Execute');
