@@ -15,7 +15,8 @@
     },
     "arguments": {
         "execute": {
-          "inArguments": [{
+          "inArguments": [
+            { "contactKey": "{{Contact.Key}}" },{
             "myNameArgument": "{{Contact.Attribute.SFDCDE.Name}}"            
           },{
             "myEmailArgument": "{{Contact.Attribute.SFDCDE.Email}}"
@@ -67,43 +68,6 @@
             "height": 400,
             "width": 1000,
           "fullscreen": false
-        }
-    },
-    "schema": {
-        "arguments": {
-            "execute": {
-              "inArguments": [
-                {
-                "myNameArgument": {
-                  "dataType": "Text",
-                  "isNullable": false,
-                  "direction": "in"
-                }},{
-                "myEmailArgument": {
-                  "dataType": "Text",
-                  "isNullable": false,
-                  "direction": "in"
-                }},
-                {"myIdArgument": {
-                  "dataType": "Number",
-                  "isNullable": false,
-                  "direction": "in"
-                }},
-                {"myconstantArgument": {
-                  "dataType": "Text",
-                  "isNullable": false,
-                  "direction": "in"
-                }}
-              ],
-              "outArguments": [
-                {
-                  "myNameArgument": {
-                    "dataType": "Text",
-                    "isNullable": false,
-                    "direction": "in"
-                  }}
-              ]
-            }
         }
     }
 }
