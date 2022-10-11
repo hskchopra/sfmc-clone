@@ -65,13 +65,7 @@
     "schema": {
         "arguments": {
             "execute": {
-                "inArguments": [{
-                  "contactKey": {
-                    "dataType": "Text",
-                    "isNullable": true,
-                    "direction": "in"
-                  }
-                }],
+                "inArguments": [],
                 "outArguments": []
             }
         }
