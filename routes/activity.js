@@ -90,10 +90,10 @@ exports.execute = function (req, res) {
             //     algorithm: 'HS256'
             // }, cb);
             
-            console.log('decodedArgs-'+decodedArgs.inArguments);
+            console.log('decodedArgs-'+decoded.inArguments);
             console.log("body: " + req.body);
             console.log("body: " + JSON.stringify(req.body));
-            console.log('decodedArgs-'+JSON.stringify(decodedArgs.inArguments));
+            console.log('decodedArgs-'+JSON.stringify(decoded.inArguments));
             logData(req);
             res.send(200, 'Execute');
         } else {
