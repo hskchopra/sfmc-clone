@@ -26,7 +26,7 @@
             "myconstantArgument": "Constant"
           }],
           "outArguments": [{
-            "myNameArgument": "{{Contact.Attribute.SFDCDE.Name}}"
+            "myNameArgument": ""
           }
           ],
           "url":"https://sfmc-activity-clone.herokuapp.com/journeybuilder/execute",

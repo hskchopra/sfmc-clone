@@ -101,7 +101,7 @@ exports.execute = function (req, res) {
             console.log("body: " + JSON.stringify(req.body));
             console.log('decodedArgs-'+JSON.stringify(decoded.inArguments));
             logData(req);
-            res.send(200, 'Execute');
+            res.send(200, {'myNameArgument': 'Success'});
         } else {
             console.error('inArguments invalid.');
             return res.status(400).end();
