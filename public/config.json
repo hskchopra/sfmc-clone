@@ -25,10 +25,7 @@
           },{
             "myconstantArgument": "Constant"
           }],
-          "outArguments": [{
-            "myIdArguments": "",
-            "myNameArguments": ""
-          }],
+          "outArguments": [],
           "url":"https://sfmc-activity-clone.herokuapp.com/journeybuilder/execute",
           "timeout": 100000,
           "retryCount": 1,
