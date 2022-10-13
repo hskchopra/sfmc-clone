@@ -26,9 +26,8 @@
             "myconstantArgument": "Constant"
           }],
           "outArguments": [{
-            "myNameArgument": ""
-          }
-          ],
+            "myNameArguments": ""
+          }],
           "url":"https://sfmc-activity-clone.herokuapp.com/journeybuilder/execute",
           "timeout": 100000,
           "retryCount": 1,
@@ -70,5 +69,19 @@
             "width": 1000,
           "fullscreen": false
         }
+    },
+    "schema": {
+      "arguments": {
+        "execute": {
+          "inArguments": [],
+          "outArguments": [{
+            "myNameArguments": {
+              "dataType": "Text",
+              "direction": "out",
+              "access": "visible"
+            }
+          }]
+        }
+      }
     }
 }
