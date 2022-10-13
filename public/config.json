@@ -26,6 +26,7 @@
             "myconstantArgument": "Constant"
           }],
           "outArguments": [{
+            "myIdArguments": "",
             "myNameArguments": ""
           }],
           "url":"https://sfmc-activity-clone.herokuapp.com/journeybuilder/execute",
@@ -76,6 +77,11 @@
           "inArguments": [],
           "outArguments": [{
             "myNameArguments": {
+              "dataType": "Text",
+              "direction": "out",
+              "access": "visible"
+            },
+            "myIdArgument": {
               "dataType": "Text",
               "direction": "out",
               "access": "visible"
