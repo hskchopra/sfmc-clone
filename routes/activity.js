@@ -96,12 +96,10 @@ exports.execute = function (req, res) {
                 console.log("Incallback",myDecoded,JSON.stringify(myDecoded));
             });
             
-            console.log('decodedArgs-'+decoded.inArguments);
-            console.log("body: " + req.body);
-            console.log("body: " + JSON.stringify(req.body));
+            console.log("decoded.inArguments[0].contactKey: " + decoded.inArguments[0].contactKey);
             console.log('decodedArgs-'+JSON.stringify(decoded.inArguments));
             logData(req);
-            res.send(200, {'myNameArguments': 'Success'});
+            res.send(200, {"myNameArguments": "Success","myIdArguments":decoded.inArguments[0].contactKey});
         } else {
             console.error('inArguments invalid.');
             return res.status(400).end();

@@ -81,7 +81,7 @@
               "direction": "out",
               "access": "visible"
             },
-            "myIdArgument": {
+            "myIdArguments": {
               "dataType": "Text",
               "direction": "out",
               "access": "visible"
