@@ -175,19 +175,19 @@ exports.execute = function (req, res) {
 };
 
 
-async function sendUpdates(){
-    let response = await axios.post('https://mcv7gfn0-v8t3lz0455cfvswsfk0.auth.marketingcloudapis.com/v2/token',
-    {
-        "grant_type": "client_credentials",
-        "client_id": "baot2fkv0x5ehiu7p2thkivt",
-        "client_secret": "vaU3posckWiDmiRlbDLnjqJ0",
-        "account_id": "536002418"
-    }).then((response)=>{
-        console.log(response);
-    }).catch((err)=>{
-        console.log(err);
-    })
-} 
+// async function sendUpdates(){
+//     let response = await axios.post('https://mcv7gfn0-v8t3lz0455cfvswsfk0.auth.marketingcloudapis.com/v2/token',
+//     {
+//         "grant_type": "client_credentials",
+//         "client_id": "baot2fkv0x5ehiu7p2thkivt",
+//         "client_secret": "vaU3posckWiDmiRlbDLnjqJ0",
+//         "account_id": "536002418"
+//     }).then((response)=>{
+//         console.log(response);
+//     }).catch((err)=>{
+//         console.log(err);
+//     })
+// } 
 
 /*
  * POST Handler for /publish/ route of Activity.
