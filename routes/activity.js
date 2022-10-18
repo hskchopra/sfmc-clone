@@ -106,7 +106,7 @@ exports.execute = function (req, res) {
                   'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                  "to": "918562036364",
+                  "to": decoded.inArguments[4].myPhoneArgument.toString(),
                   "type": "template",
                   "template": {
                     "namespace": "ecafd84e_6829_4074_bd9d_382a28af2296",
@@ -121,7 +121,7 @@ exports.execute = function (req, res) {
                         "parameters": [
                           {
                             "type": "text",
-                            "text": "*Omar*"
+                            "text": decoded.inArguments[1].myNameArgument.toString()
                           },
                           {
                             "type": "text",
