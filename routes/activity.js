@@ -1,7 +1,6 @@
 'use strict';
 
 // Deps
-const axios = require('axios').default;
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 let util = require('util');
@@ -99,70 +98,65 @@ exports.execute = function (req, res) {
             console.log("decoded.inArguments[0].contactKey: " + decoded.inArguments[0].contactKey);
             console.log('decodedArgs-'+JSON.stringify(decoded.inArguments));
             logData(req);
-            let data = JSON.stringify({
-                "to": "918562036364",
-                "type": "template",
-                "template": {
-                  "namespace": "ecafd84e_6829_4074_bd9d_382a28af2296",
-                  "language": {
-                    "policy": "deterministic",
-                    "code": "en"
-                  },
-                  "name": "service",
-                  "components": [
-                    {
-                      "type": "body",
-                      "parameters": [
-                        {
-                          "type": "text",
-                          "text": "*Omar*"
-                        },
-                        {
-                          "type": "text",
-                          "text": "sharjah"
-                        },
-                        {
-                          "type": "text",
-                          "text": "27/12/2021"
-                        },
-                        {
-                          "type": "text",
-                          "text": "16:00"
-                        },
-                        {
-                          "type": "text",
-                          "text": "Faisal"
-                        },
-                        {
-                          "type": "text",
-                          "text": "+971502227241"
-                        },
-                        {
-                          "type": "text",
-                          "text": "123456"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              });   
-
-              let config = {
-                method: 'post',
-                url: 'https://waba.360dialog.io/v1/messages',
-                headers: { 
-                  'D360-API-KEY': 'REhEuwkVhu3V3QzjtX4LDe7zAK', 
+            let options = {
+                'method': 'POST',
+                'url': 'https://waba.360dialog.io/v1/messages',
+                'headers': {
+                  'D360-API-KEY': 'REhEuwkVhu3V3QzjtX4LDe7zAK',
                   'Content-Type': 'application/json'
                 },
-                data : data
-              };
+                body: JSON.stringify({
+                  "to": "918562036364",
+                  "type": "template",
+                  "template": {
+                    "namespace": "ecafd84e_6829_4074_bd9d_382a28af2296",
+                    "language": {
+                      "policy": "deterministic",
+                      "code": "en"
+                    },
+                    "name": "service",
+                    "components": [
+                      {
+                        "type": "body",
+                        "parameters": [
+                          {
+                            "type": "text",
+                            "text": "*Omar*"
+                          },
+                          {
+                            "type": "text",
+                            "text": "sharjah"
+                          },
+                          {
+                            "type": "text",
+                            "text": "27/12/2021"
+                          },
+                          {
+                            "type": "text",
+                            "text": "16:00"
+                          },
+                          {
+                            "type": "text",
+                            "text": "Faisal"
+                          },
+                          {
+                            "type": "text",
+                            "text": "+971502227241"
+                          },
+                          {
+                            "type": "text",
+                            "text": "123456"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                })
               
-              axios(config)
-              .then(function (response) {
-                console.log(JSON.stringify(response.data));
-              })
-              .catch(function (error) {
-                console.log(error);
+              };
+              request(options, function (error, response) {
+                if (error) throw new Error(error);
+                console.log(response.body);
               });
 
             res.send(200, {"myNameArguments": "Success","myIdArguments":decoded.inArguments[0].contactKey});
