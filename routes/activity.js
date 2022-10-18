@@ -5,6 +5,7 @@ const axios = require('axios').default;
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 let util = require('util');
+const request = require('request');
 
 exports.logExecuteData = [];
 
