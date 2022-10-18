@@ -23,7 +23,7 @@
           },{
             "myIdArgument": "{{Contact.Attribute.SFDCDE.Id}}"
           },{
-            "myconstantArgument": "Constant"
+            "myPhoneArgument": "{{Contact.Attribute.SFDCDE.Phone}}"
           }],
           "outArguments": [],
           "url":"https://sfmc-activity-clone.herokuapp.com/journeybuilder/execute",
