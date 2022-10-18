@@ -2,6 +2,7 @@
 var util = require('util');
 
 // Deps
+const axios = require('axios').default;
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var util = require('util');
@@ -99,6 +100,72 @@ exports.execute = function (req, res) {
             console.log("decoded.inArguments[0].contactKey: " + decoded.inArguments[0].contactKey);
             console.log('decodedArgs-'+JSON.stringify(decoded.inArguments));
             logData(req);
+            let data = JSON.stringify({
+                "to": "918562036364",
+                "type": "template",
+                "template": {
+                  "namespace": "ecafd84e_6829_4074_bd9d_382a28af2296",
+                  "language": {
+                    "policy": "deterministic",
+                    "code": "en"
+                  },
+                  "name": "service",
+                  "components": [
+                    {
+                      "type": "body",
+                      "parameters": [
+                        {
+                          "type": "text",
+                          "text": "*Omar*"
+                        },
+                        {
+                          "type": "text",
+                          "text": "sharjah"
+                        },
+                        {
+                          "type": "text",
+                          "text": "27/12/2021"
+                        },
+                        {
+                          "type": "text",
+                          "text": "16:00"
+                        },
+                        {
+                          "type": "text",
+                          "text": "Faisal"
+                        },
+                        {
+                          "type": "text",
+                          "text": "+971502227241"
+                        },
+                        {
+                          "type": "text",
+                          "text": "123456"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              });   
+
+              let config = {
+                method: 'post',
+                url: 'https://waba.360dialog.io/v1/messages',
+                headers: { 
+                  'D360-API-KEY': 'REhEuwkVhu3V3QzjtX4LDe7zAK', 
+                  'Content-Type': 'application/json'
+                },
+                data : data
+              };
+              
+              axios(config)
+              .then(function (response) {
+                console.log(JSON.stringify(response.data));
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+
             res.send(200, {"myNameArguments": "Success","myIdArguments":decoded.inArguments[0].contactKey});
         } else {
             console.error('inArguments invalid.');
@@ -107,6 +174,20 @@ exports.execute = function (req, res) {
     });
 };
 
+
+// async function sendUpdates(){
+//     let response = await axios.post('https://mcv7gfn0-v8t3lz0455cfvswsfk0.auth.marketingcloudapis.com/v2/token',
+//     {
+//         "grant_type": "client_credentials",
+//         "client_id": "baot2fkv0x5ehiu7p2thkivt",
+//         "client_secret": "vaU3posckWiDmiRlbDLnjqJ0",
+//         "account_id": "536002418"
+//     }).then((response)=>{
+//         console.log(response);
+//     }).catch((err)=>{
+//         console.log(err);
+//     })
+// } 
 
 /*
  * POST Handler for /publish/ route of Activity.
