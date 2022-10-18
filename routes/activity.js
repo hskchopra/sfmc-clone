@@ -1,12 +1,10 @@
 'use strict';
-var util = require('util');
 
 // Deps
 const axios = require('axios').default;
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
-var util = require('util');
-var http = require('https');
+let util = require('util');
 
 exports.logExecuteData = [];
 
