@@ -155,11 +155,12 @@ exports.execute = function (req, res) {
               
               };
               request(options, function (error, response) {
-                if (error) throw new Error(error);
-                console.log(response.body);
+                if (error) {
+                    res.send(200, {"myNameArguments": "Fail","myIdArguments":decoded.inArguments[0].contactKey});
+                }
+                res.send(200, {"myNameArguments": "Success","myIdArguments":decoded.inArguments[0].contactKey});
+        
               });
-
-            res.send(200, {"myNameArguments": "Success","myIdArguments":decoded.inArguments[0].contactKey});
         } else {
             console.error('inArguments invalid.');
             return res.status(400).end();
