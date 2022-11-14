@@ -49,7 +49,7 @@ define([
     function initialize(data) {
         console.log(data);
         document.getElementById('configuration').value = JSON.stringify(data,null,2);
-        document.getElementById('showKey').innerText  = "KEY: "+data.key;
+        document.getElementById('showKey').innerText = "KEY: "+data.key;
         
         // if (data) {
         //     payload = data;
@@ -91,9 +91,8 @@ define([
 
     function save() {
         let config = JSON.parse( document.getElementById('configuration').value);
-        console.log("Selected Value",document.getElementById('selectTemplate').value );
+        config['metaData'].isConfigured = true;
         config['arguments']['execute']['inArguments'][5]['selectedTemplate'] = document.getElementById('selectTemplate').value;
-        console.log(JSON.stringify(config))
         connection.trigger('updateActivity', config);
         // var postcardURLValue = $('#postcard-url').val();
         // var postcardTextValue = $('#postcard-text').val();
