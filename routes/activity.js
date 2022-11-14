@@ -98,14 +98,158 @@ exports.execute = function (req, res) {
             console.log("decoded.inArguments[0].contactKey: " + decoded.inArguments[0].contactKey);
             console.log('decodedArgs-'+JSON.stringify(decoded.inArguments));
             logData(req);
-            let options = {
-                'method': 'POST',
-                'url': 'https://waba.360dialog.io/v1/messages',
-                'headers': {
-                  'D360-API-KEY': 'REhEuwkVhu3V3QzjtX4LDe7zAK',
-                  'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
+            let bodyToSend = '';
+            switch (decoded.inArguments[5].selectedTemplate.toString()) {
+              case '1':
+                bodyToSend = {
+                  "to": decoded.inArguments[4].myPhoneArgument.toString(),
+                  "type": "template",
+                  "template": { 
+                  "namespace": "7cf78afe_6967_440e_b6a2_4e56fd6d4c26",
+                      "language": {
+                          "policy": "deterministic",
+                          "code": "en"
+                      },
+                      "name": "presales_promote_online_sales_reservation",
+                      "components": [{
+                          "type": "header",
+                          "parameters": [{
+                      "type": "image",
+                      "image": {
+                        "link": "https://car-care-imges.s3.us-west-2.amazonaws.com/Buy+Car+Online+En.jpg"
+                      }
+                    }
+                          ]
+                      }]
+                  }
+              }
+                break;
+              case '2':
+                bodyToSend = {
+                  "to": decoded.inArguments[4].myPhoneArgument.toString(),
+                  "type": "template",
+                  "template": { 
+                  "namespace": "7cf78afe_6967_440e_b6a2_4e56fd6d4c26",
+                      "language": {
+                          "policy": "deterministic",
+                          "code": "ar"
+                      },
+                      "name": "presales_promote_online_sales_reservation",
+                      "components": [{
+                          "type": "header",
+                          "parameters": [{
+                      "type": "image",
+                      "image": {
+                        "link": "https://car-care-imges.s3.us-west-2.amazonaws.com/Buy+Car+Online+Ar.jpg"
+                      }
+                    }
+                          ]
+                      }]
+                  }
+              };
+              break;
+              case '3':
+                bodyToSend = {
+                  "to": decoded.inArguments[4].myPhoneArgument.toString(),
+                  "type": "template",
+                  "template": { 
+                  "namespace": "7cf78afe_6967_440e_b6a2_4e56fd6d4c26",
+                      "language": {
+                          "policy": "deterministic",
+                          "code": "en"
+                      },
+                      "name": "post_purchase_promote_online_sales",
+                      "components": [{
+                          "type": "header",
+                          "parameters": [{
+                      "type": "image",
+                      "image": {
+                        "link": "https://car-care-imges.s3.us-west-2.amazonaws.com/post_purchase_promote_online_sales+-+English.jpg"
+                      }
+                    }
+                          ]
+                      }]
+                  }
+              }
+              break;
+
+              case '4':
+                bodyToSend = {
+                  "to": decoded.inArguments[4].myPhoneArgument.toString(),
+                  "type": "template",
+                  "template": { 
+                  "namespace": "7cf78afe_6967_440e_b6a2_4e56fd6d4c26",
+                      "language": {
+                          "policy": "deterministic",
+                          "code": "ar"
+                      },
+                      "name": "post_purchase_promote_online_sales",
+                      "components": [{
+                          "type": "header",
+                          "parameters": [{
+                      "type": "image",
+                      "image": {
+                        "link": "https://car-care-imges.s3.us-west-2.amazonaws.com/post_purchase_promote_online_sales+-+Arabic.jpg"
+                      }
+                    }
+                          ]
+                      }]
+                  }
+              };
+              break;
+
+              case '5':
+                bodyToSend = {
+                  "to": decoded.inArguments[4].myPhoneArgument.toString(),
+                  "type": "template",
+                  "template": { 
+                  "namespace": "7cf78afe_6967_440e_b6a2_4e56fd6d4c26",
+                      "language": {
+                          "policy": "deterministic",
+                          "code": "en"
+                      },
+                      "name": "post_service_visit",
+                      "components": [{
+                          "type": "header",
+                          "parameters": [{
+                      "type": "image",
+                      "image": {
+                        "link": "https://car-care-imges.s3.us-west-2.amazonaws.com/post_service_visit+-+English.jpg"
+                      }
+                    }
+                          ]
+                      }]
+                  }
+              };
+              break;
+
+              case '6':
+                bodyToSend = {
+                  "to": decoded.inArguments[4].myPhoneArgument.toString(),
+                  "type": "template",
+                  "template": { 
+                  "namespace": "7cf78afe_6967_440e_b6a2_4e56fd6d4c26",
+                      "language": {
+                          "policy": "deterministic",
+                          "code": "ar"
+                      },
+                      "name": "post_service_visit",
+                      "components": [{
+                          "type": "header",
+                          "parameters": [{
+                      "type": "image",
+                      "image": {
+                        "link": "https://car-care-imges.s3.us-west-2.amazonaws.com/post_service_visit+-+Arabic.jpg"
+                      }
+                    }
+                          ]
+                      }]
+                  }
+              }
+              break;
+            
+              default:
+                bodyToSend = {
                   "to": decoded.inArguments[4].myPhoneArgument.toString(),
                   "type": "template",
                   "template": {
@@ -151,7 +295,17 @@ exports.execute = function (req, res) {
                       }
                     ]
                   }
-                })
+                };
+                break;
+            }
+            let options = {
+                'method': 'POST',
+                'url': 'https://waba.360dialog.io/v1/messages',
+                'headers': {
+                  'D360-API-KEY': 'ZqinuCd1RzJ5bAX8AvI9go2YAK',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(bodyToSend)
               
               };
               request(options, function (error, response) {

@@ -24,6 +24,8 @@
             "myIdArgument": "{{Contact.Attribute.SFDCDE.Id}}"
           },{
             "myPhoneArgument": "{{Contact.Attribute.SFDCDE.Phone}}"
+          },{
+            "selectedTemplate":"1"
           }],
           "outArguments": [],
           "url":"https://sfmc-activity-clone.herokuapp.com/journeybuilder/execute",
