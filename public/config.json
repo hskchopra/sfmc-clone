@@ -8,8 +8,8 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "Template",
-          "description": "A Template for a custom Journey Builder activity",
+            "name": "SAMACO MESSAGE",
+          "description": "A Template for a sending message to whatsapp using Journey Builder activity",
           "step1Label": "Configure Activity"
         }
     },
