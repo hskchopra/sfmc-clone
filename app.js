@@ -14,8 +14,8 @@ const fs = require('fs');
 
 var app = express();
 
-var key = fs.readFileSync('../selfsigned.key');
-var cert = fs.readFileSync('../selfsigned.crt');
+var cert = fs.readFileSync('./selfsigned.crt');
+var key = fs.readFileSync('./selfsigned.key');
 
 let options = {
   key:key,
