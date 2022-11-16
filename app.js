@@ -22,6 +22,8 @@ let options = {
   cert: cert
 }
 
+console.log("CERT- >",cert.toString());
+
 // Configure Express
 app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.raw({type: 'application/jwt'}));
