@@ -14,15 +14,15 @@ const fs = require('fs');
 
 var app = express();
 
-var cert = fs.readFileSync('./selfsigned.crt');
-var key = fs.readFileSync('./selfsigned.key');
+// var cert = fs.readFileSync('./selfsigned.crt');
+// var key = fs.readFileSync('./selfsigned.key');
 
-let options = {
-  key:key,
-  cert: cert
-}
+// let options = {
+//   key:key,
+//   cert: cert
+// }
 
-console.log("CERT- >",cert.toString());
+// console.log("CERT- >",cert.toString());
 
 // Configure Express
 app.set('port', process.env.PORT || 3000);
@@ -50,6 +50,6 @@ app.post('/journeybuilder/validate/', activity.validate );
 app.post('/journeybuilder/publish/', activity.publish );
 app.post('/journeybuilder/execute/', activity.execute );
 
-https.createServer(options, app).listen(app.get('port'), function(){
+https.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
