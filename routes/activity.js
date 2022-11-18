@@ -72,6 +72,8 @@ exports.save = function (req, res) {
  */
 exports.execute = function (req, res) {
 
+  
+  console.log("decoded.inArguments[0].contactKey: " + req.body);
     // example on how to decode JWT
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
@@ -80,7 +82,8 @@ exports.execute = function (req, res) {
             console.error(err);
             return res.status(401).end();
         }
-
+        
+        console.log("decoded.inArguments[0].contactKey: " + decoded.inArguments[0].contactKey);
         if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
             
             // decoded in arguments
