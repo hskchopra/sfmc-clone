@@ -75,12 +75,12 @@
         "execute": {
           "inArguments": [],
           "outArguments": [{
-            "myNameArguments": {
+            "status": {
               "dataType": "Text",
               "direction": "out",
               "access": "visible"
             },
-            "myIdArguments": {
+            "contactId": {
               "dataType": "Text",
               "direction": "out",
               "access": "visible"

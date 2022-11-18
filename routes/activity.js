@@ -310,9 +310,9 @@ exports.execute = function (req, res) {
               };
               request(options, function (error, response) {
                 if (error) {
-                    res.send(200, {"myNameArguments": "Fail","myIdArguments":decoded.inArguments[0].contactKey});
+                    res.send(200, {"status": "Fail","contactId":decoded.inArguments[0].contactKey});
                 }
-                res.send(200, {"myNameArguments": "Success","myIdArguments":decoded.inArguments[0].contactKey});
+                res.send(200, {"status": "Sent","contactId":decoded.inArguments[0].contactKey});
         
               });
         } else {
