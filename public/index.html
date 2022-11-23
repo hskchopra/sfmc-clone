@@ -22,6 +22,34 @@
 
             require(config, dependencies);
         })();
+
+        function onSelectChange(event){
+            let value = document.getElementById('selectTemplate').value;
+            let previewImage = document.getElementById('previewImage');
+            console.log(value);
+            switch(value){
+                case 1 :
+                previewImage.src = './images/1.png';
+                break;
+                case 2 :
+                previewImage.src = './images/2.png';
+                break;
+                case 3 :
+                previewImage.src = './images/3.png';
+                break;
+                case 4 :
+                previewImage.src = './images/4.png';
+                break;
+                case 5 :
+                previewImage.src = './images/5.png';
+                break;
+                case 6 :
+                previewImage.src = './images/6.png';
+                break;
+            }
+            
+
+        }
     </script>
 </head>
 
@@ -31,7 +59,7 @@
 
             <main class="slds-col slds-size--1-of-3 slds-p-horizontal--small">
                 
-                <select name="Template" id="selectTemplate">
+                <select name="Template" id="selectTemplate" onchange="onSelectChange(this)">
                     <option value="1">presales_promote_online_sales_reservation - English</option>
                     <option value="2">presales_promote_online_sales_reservation - Arabic</option>
                     <option value="3">post_purchase_promote_online_sales - English</option>
@@ -39,7 +67,7 @@
                     <option value="5">post_service_visit - English</option>
                     <option value="6">post_service_visit - Arabic</option>
                   </select>
-
+                <img id="previewImage" src="./images/0.png" name="edit-save" alt="Edit" />
                   <p id="showKey"></p>
               <textarea style="display: none" id="configuration"></textarea>
             </main>
